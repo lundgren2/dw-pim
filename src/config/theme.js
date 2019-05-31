@@ -13,14 +13,15 @@ export const mediaQueries = {
 }
 
 export const brand = {
-  primary: 'rgb(215, 70, 75)',
+  primary: 'rgba(0, 14, 34, 0.9)',
+  primaryLight: 'hotpink',
   secondary: '#B1D8C6'
 }
 
 export const colors = {
   ...brand,
   dark: '#444',
-  text: '#555',
+  text: 'rgb(0, 8, 28)',
   grey: '#6b6b6b',
   black: '#000',
   white: '#fff',
@@ -31,6 +32,7 @@ export const colors = {
 
 export const fonts = {
   default: [
+    'Nunito Sans',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
@@ -51,8 +53,8 @@ export const fonts = {
     'Courier',
     'monospace'
   ].join(', '),
-  sizeSm: '16px',
-  sizeMd: '18px'
+  sizeSm: '14px',
+  sizeMd: '16px'
 }
 
 export const animation = {
