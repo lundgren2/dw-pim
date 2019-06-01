@@ -1,12 +1,12 @@
 import React from 'react'
 import styled, { Box } from '@xstyled/styled-components'
-import DummyItem from './dummy-item'
+// import DummyItem from './dummy-item'
 
 const Wrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #f9f9f9;
+  color: grey;
 `
 const Title = styled('h2')`
   font-size: 3;
@@ -17,10 +17,11 @@ const Title = styled('h2')`
 const ProductElement = () => {
   return <div>TYP: desc</div>
 }
-const ProductDetails = () => {
+const ProductDetails = ({ product }) => {
+  const { key } = product
   return (
     <Wrapper p={4}>
-      <Title>Details</Title>
+      <Title>{key}</Title>
       <ProductElement />
     </Wrapper>
   )

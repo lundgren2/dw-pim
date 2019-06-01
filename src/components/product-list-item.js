@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import styled from '@xstyled/styled-components'
 import DummyItem from './dummy-item'
-// import { css } from 'styled-components/macro'
+import { ProductContext } from '../context'
 
 const Tr = styled('tr')`
-  transition: max-height 1.3s ease-out;
-  height: auto;
-  max-height: 0;
-  ${({ isExpanded }) => isExpanded && `max-height: 600px;`};
+  transition: background-color 0.4s ease-out;
+  ${({ isSelected }) => isSelected && `background-color: #eee;`};
 `
 
 const Td = styled('td')`
@@ -23,6 +21,7 @@ const Td = styled('td')`
 const TitleTd = styled(Td)`
   color: primary;
   font-style: italic;
+  cursor: pointer;
 `
 
 export const ProductListItemLoading = () => {
@@ -44,14 +43,16 @@ export const ProductListItemLoading = () => {
   )
 }
 const ProductListItem = ({ product }) => {
-  const [isExpanded, setExpanded] = useState(false)
+  const [{ data }, dispatch] = useContext(ProductContext)
   const { id, key, published, elements } = product
   const { value: price, unitAbbreviation: currency } = elements[3].value
-
-  console.log(isExpanded)
+  const isSelected = id === data.selectedProduct.id
 
   return (
-    <Tr onClick={() => setExpanded(!isExpanded)} isExpanded={isExpanded}>
+    <Tr
+      onClick={() => dispatch({ type: 'SELECT_PRODUCT', payload: product })}
+      isSelected={isSelected}
+    >
       <Td>{id}</Td>
       <TitleTd>{key}</TitleTd>
       <Td>
@@ -63,9 +64,3 @@ const ProductListItem = ({ product }) => {
 }
 
 export default ProductListItem
-
-//   <Code>DEBUG: {JSON.stringify(product, 0, 2)}</Code>
-// <Wrapper p={4}>
-//   <span>{id}</span>
-//   <br />
-// </Wrapper>

@@ -1,7 +1,7 @@
 import React from 'react'
-import useSwaggerApi from '../hooks/useSwaggerApi'
+import useFetchProducts from '../hooks/useFetchProducts'
 import ProductListItem, { ProductListItemLoading } from './product-list-item'
-import styled, { css, Box } from '@xstyled/styled-components'
+import styled, { Box } from '@xstyled/styled-components'
 
 const Wrapper = styled(Box)`
   background-color: #ffffff;
@@ -27,9 +27,10 @@ const Th = styled('td')`
 `
 
 const ProductListView = () => {
-  const [{ data, isLoading, isError }] = useSwaggerApi()
+  const [{ data, isLoading, isError }] = useFetchProducts()
+  const { products } = data
 
-  if (isError) return <div>Something went wrong ...</div>
+  if (isError) return <div>Some error when fetching data.</div>
 
   return (
     <Wrapper>
@@ -50,8 +51,10 @@ const ProductListView = () => {
         </thead>
         <tbody>
           {isLoading || !data
-            ? [0, 1, 2].map(i => <ProductListItemLoading />)
-            : data.map(product => <ProductListItem product={product} />)}
+            ? [0, 1, 2].map(i => <ProductListItemLoading key={i} />)
+            : products.map(product => (
+                <ProductListItem key={product.id} product={product} />
+              ))}
         </tbody>
       </Table>
     </Wrapper>
