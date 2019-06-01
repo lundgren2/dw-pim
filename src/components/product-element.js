@@ -3,7 +3,6 @@ import styled from '@xstyled/styled-components'
 
 const ElementRow = styled.div`
   display: flex;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   border-bottom: 1px solid rgb(221, 221, 221);
   padding: 0.5rem 0px;

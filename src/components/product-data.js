@@ -1,19 +1,22 @@
 import React, { useContext } from 'react'
-import ProductImage from './product-image'
-import ProductDetails from './product-details'
 import styled, { Box, css } from '@xstyled/styled-components'
 import { breakpoints } from '@xstyled/system'
-import CloseButton from './close-button'
 import { ProductContext } from '../context'
+import ProductImage from './product-image'
+import ProductDetails from './product-details'
+import CloseButton from './close-button'
 
-const Wrapper = styled(Box)(
+const Wrapper = styled(Box)`
+  padding: 4;
+`
+const ProductWrapper = styled(Box)(
   breakpoints({
     xs: css`
       display: flex;
       flex-direction: column-reverse;
     `,
     md: css`
-      flex-direction: row;
+      flex-direction: column;
     `,
   }),
 )
@@ -29,13 +32,13 @@ const ProductData = () => {
   )
 
   return (
-    <>
-      <CloseButton onClick={() => dispatch({ type: 'RESET_PRODUCT' })} mt={2} />
-      <Wrapper p={2}>
+    <Wrapper>
+      <CloseButton onClick={() => dispatch({ type: 'RESET_PRODUCT' })} />
+      <ProductWrapper>
         <ProductImage id={imageObj.value.id} />
         <ProductDetails product={selectedProduct} />
-      </Wrapper>
-    </>
+      </ProductWrapper>
+    </Wrapper>
   )
 }
 

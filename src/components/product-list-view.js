@@ -4,8 +4,11 @@ import ProductListItem, { ProductListItemLoading } from './product-list-item'
 import styled, { Box } from '@xstyled/styled-components'
 
 const Wrapper = styled(Box)`
-  background-color: #ffffff;
-  padding: 2;
+  background-color: #f9f9fa;
+  border-right: 1;
+  border-bottom: 1;
+  border-color: #ccd1d8;
+  padding: 4;
 `
 
 const Table = styled('table')`
