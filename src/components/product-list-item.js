@@ -10,7 +10,7 @@ const Tr = styled('tr')`
 
 const Td = styled('td')`
   border-bottom: 1;
-  border-color: lightgray;
+  border-color: lightGray;
   text-align: left;
   padding: 2;
 

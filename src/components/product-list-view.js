@@ -9,7 +9,7 @@ const Wrapper = styled(Box)`
 `
 
 const Table = styled('table')`
-  color: grey;
+  color: gray;
 `
 const Title = styled('h1')`
   font-size: 4;
@@ -38,7 +38,7 @@ const ProductListView = () => {
       <br />
       <Table
         style={{
-          width: '100%'
+          width: '100%',
         }}
       >
         <thead>
