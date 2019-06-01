@@ -3,19 +3,13 @@ export const breakpoints = {
   sm: 576,
   md: 768,
   lg: 992,
-  xl: 1200
-}
-
-export const mediaQueries = {
-  small: `@media screen and (min-width: ${breakpoints[0]})`,
-  medium: `@media screen and (min-width: ${breakpoints[1]})`,
-  large: `@media screen and (min-width: ${breakpoints[2]})`
+  xl: 1200,
 }
 
 export const brand = {
   primary: 'rgba(0, 14, 34, 0.9)',
   primaryLight: 'hotpink',
-  secondary: '#B1D8C6'
+  secondary: '#B1D8C6',
 }
 
 export const colors = {
@@ -27,7 +21,7 @@ export const colors = {
   white: '#fff',
   bg: '#f9f9f9',
   link: brand.primary,
-  linkHover: `rgba(${brand.primary}, 0.5)`
+  linkHover: `rgba(${brand.primary}, 0.5)`,
 }
 
 export const fonts = {
@@ -42,7 +36,7 @@ export const fonts = {
     'sans-serif',
     'Apple Color Emoji',
     'Segoe UI Emoji',
-    'Segoe UI Symbol'
+    'Segoe UI Symbol',
   ].join(', '),
   serif: ['Georgia', 'serif'].join(', '),
   mono: [
@@ -51,14 +45,14 @@ export const fonts = {
     'Liberation Mono',
     'Menlo',
     'Courier',
-    'monospace'
+    'monospace',
   ].join(', '),
   sizeSm: '14px',
-  sizeMd: '16px'
+  sizeMd: '16px',
 }
 
 export const animation = {
-  transitionTime: '300ms'
+  transitionTime: '300ms',
 }
 
 export const space = [0, 4, 8, 16, 32, 64]
@@ -72,15 +66,15 @@ export default {
   fontSizes: [12, 14, 16, 20, 24, 32],
   container: {
     base: '100rem',
-    text: '55rem'
+    text: '55rem',
   },
   spacer: {
     horizontal: '2rem',
-    vertical: '3rem'
+    vertical: '3rem',
   },
   gradient: `linear-gradient(
     to right,
     rgba(208, 255, 227, 1) 0%,
     rgba(177, 216, 198, 1) 100%
-  )`
+  )`,
 }

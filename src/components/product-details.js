@@ -20,7 +20,7 @@ const ProductElement = () => {
 const ProductDetails = ({ product }) => {
   const { key } = product
   return (
-    <Wrapper p={4}>
+    <Wrapper>
       <Title>{key}</Title>
       <ProductElement />
     </Wrapper>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-
-const API_URL = 'https://dev-api.danielwellington.com/frontend'
+import { API_URL } from '../config/app'
 
 const getAsset = async id => {
   const response = await fetch(`${API_URL}/assets/${id}`)

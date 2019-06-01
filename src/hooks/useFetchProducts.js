@@ -1,8 +1,7 @@
 import { useEffect, useContext } from 'react'
 import axios from 'axios'
 import { ProductContext } from '../context'
-
-const API_URL = 'https://dev-api.danielwellington.com/frontend'
+import { API_URL } from '../config/app'
 
 const getProduct = async id => {
   const response = await axios
@@ -27,7 +26,7 @@ const useFetchProducts = () => {
         await axios.all(productIds).then(res => {
           dispatch({
             type: 'FETCH_SUCCESS',
-            payload: { ...state.data, products: res }
+            payload: { ...state.data, products: res },
           })
         })
       } catch (error) {
