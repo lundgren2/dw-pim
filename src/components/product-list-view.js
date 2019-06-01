@@ -18,6 +18,7 @@ const Title = styled('h1')`
   font-size: 4;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: primary;
 `
 
 const Th = styled('td')`
@@ -28,6 +29,7 @@ const Th = styled('td')`
   font-size: 80%;
   text-transform: uppercase;
 `
+const PAGE_TITLE = 'Products'
 
 const ProductListView = () => {
   const [{ data, isLoading, isError }] = useFetchProducts()
@@ -37,7 +39,7 @@ const ProductListView = () => {
 
   return (
     <Wrapper>
-      <Title>Produkter</Title>
+      <Title>{PAGE_TITLE}</Title>
       <br />
       <Table
         style={{

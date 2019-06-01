@@ -3,9 +3,10 @@ import styled from '@xstyled/styled-components'
 
 const ElementRow = styled.div`
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgb(221, 221, 221);
+  border-bottom: 1;
   padding: 0.5rem 0px;
+  border-color: borderColor;
+  justify-content: space-between;
 `
 
 const ElementName = styled.span`
@@ -14,7 +15,7 @@ const ElementName = styled.span`
 
 const ElementValue = styled.span`
   color: text;
-  max-width: 32rem;
+  max-width: 25rem;
 `
 
 const Text = ({ name, value }) => {

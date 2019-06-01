@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import { fonts, colors, animation } from '../../config/theme'
-// import media from '../../utils/media'
 
 export default createGlobalStyle`
   html,
@@ -79,9 +78,6 @@ export default createGlobalStyle`
     &:focus,
     &:active,
     &:hover {
-      /* background-color: ${colors.primary}; */
-      /* border-radius: 0.25rem; */
-      /* color: ${colors.lightest}; */
       outline: 0;
       text-decoration: none;
     }
@@ -104,7 +100,7 @@ export default createGlobalStyle`
   }
   blockquote > p:last-child strong:only-child:not(.no-attribution) {
     display: block;
-    color: ${colors.gray};
+    color: borderColor;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 600;
@@ -114,7 +110,7 @@ export default createGlobalStyle`
     }
   }
   blockquote > p:last-child strong:only-child a {
-    border-color: ${colors.gray};
+    border-color: borderColor;
     color: inherit;
     :hover,
     :active,
@@ -124,7 +120,7 @@ export default createGlobalStyle`
     }
   }
   abbr {
-    border-bottom: 1px dotted ${colors.gray};
+    border-bottom: 1px dotted borderColor;
     cursor: help;
     text-decoration: none;
   }

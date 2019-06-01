@@ -5,15 +5,17 @@ import { ProductContext } from '../context'
 
 const Tr = styled('tr')`
   transition: background-color 0.4s ease-out;
+  &:hover {
+    background-color: #f5f5f5;
+  }
   ${({ isSelected }) => isSelected && `background-color: #eee;`};
 `
 
 const Td = styled('td')`
   border-bottom: 1;
-  border-color: lightGray;
+  border-color: borderColor;
   text-align: left;
   padding: 2;
-
   &:last-of-type  {
     width: 50px;
   }

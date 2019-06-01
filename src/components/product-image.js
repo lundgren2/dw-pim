@@ -1,12 +1,12 @@
 import React from 'react'
-import { DummyImage } from './dummy-item'
-import useProductImage from '../hooks/useProductImage'
 import styled from '@xstyled/styled-components'
+import useProductImage from '../hooks/useProductImage'
+import { DummyImage } from './dummy-item'
 
 const Wrapper = styled.div`
   display: flex;
-  /* text-align: center; */
   justify-content: center;
+
   img {
     align-self: center;
     height: auto;

@@ -1,23 +1,28 @@
 # DW PIM
 
+An demo application that reads product data from a PIM (Product Information Management) system and presents it to the user. Live url: <https://dw-pim.netlify.com/>
+
 ## Getting started
 
-1. Clone the repo and run inside the folder to install dependencies and run the app.<br />
-   <em>You need to have Node installed.</em>
+<em>Pre-dependencies: You need to have Node installed.</em>
+
+1. Clone the repo
 
 ```sh
-yarn
-yarn start
+git clone git@github.com:lundgren2/dw-pim.git
 ```
 
-## Features
+2. Run the code below to install dependencies and run the app.<br />
 
-Feel free to use any tools you like to show us your skills.
+```sh
+cd dw-pim/
+yarn && yarn start
+```
+
+3. You can now access the app on: <http://localhost:3000>
+
+## Techniques used
 
 - **React**: One of the most popular JavaScript libraries to build user interfaces.
-- **Emotion.js**: a preformant CSS-in-JS library to keep all the styles together with the components and also take advantage of the power of JavaScript in CSS.
--
-
-### Did you intentionally leave stuff out? In that case, what and why?
-
-The API token should be handled by an backend. And then send the request to the API. Once it receives the response, the backend can then serve the client. Suitable Auth method can be used to communicate between client and backend.
+- **styled-components**: CSS-in-JS library to keep all the styles together with the components and also take advantage of the power of JavaScript in CSS.
+- **xstyled**: A helper lib to styled-components to reduce development time and provides cleaner components.

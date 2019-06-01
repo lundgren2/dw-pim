@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { Box } from '@xstyled/styled-components'
 
-const transition = `all 0.3s ease-in`
-const color = `lightGray`
-const size = `50px`
+const transition = 'all 0.3s ease-in'
+const color = 'lightGray'
+const size = '40px'
 
 const CloseButton = styled(Box)`
   position: relative;
@@ -37,7 +37,7 @@ const CloseButton = styled(Box)`
     letter-spacing: 2px;
     transition: ${transition};
     opacity: 0;
-    margin: ${size} 5px 0 5px;
+    margin: 45px 0 0 2px;
     position: absolute;
   }
 

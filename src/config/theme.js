@@ -21,6 +21,7 @@ export const colors = {
   black: '#000',
   white: '#fff',
   bg: '#f9f9f9',
+  borderColor: 'rgb(221, 221, 221)',
   link: brand.primary,
   linkHover: `rgba(${brand.primary}, 0.5)`,
 }

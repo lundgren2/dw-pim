@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import App from './app'
 import * as serviceWorker from './serviceWorker'
 import { ThemeProvider } from '@xstyled/styled-components'
 import theme from './config/theme'
@@ -9,7 +9,7 @@ ReactDOM.render(
   <ThemeProvider theme={theme}>
     <App />
   </ThemeProvider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )
 
 // If you want your app to work offline and load faster, you can change

@@ -3,6 +3,7 @@ import styled, { css } from '@xstyled/styled-components'
 import { breakpoints } from '@xstyled/system'
 import { Watch } from 'react-feather'
 import NavItem from './nav-item'
+import Logo from './logo'
 
 const Wrapper = styled('div')(
   breakpoints({
@@ -21,27 +22,11 @@ const Wrapper = styled('div')(
   }),
 )
 
-const Logo = styled('div')`
-  font-family: sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  color: white;
-  user-select: none;
-  span {
-    font-size: 2rem;
-    line-height: 2rem;
-    display: block;
-  }
-`
-
 const Nav = () => {
   return (
     <Wrapper>
-      <Logo>
-        <span>DW</span>
-        PIM
-      </Logo>
-      <NavItem className="selected">
+      <Logo />
+      <NavItem isCurrentItem={true}>
         <Watch />
         Products
       </NavItem>
