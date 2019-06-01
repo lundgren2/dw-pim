@@ -1,12 +1,12 @@
 import React from 'react'
 import styled, { Box } from '@xstyled/styled-components'
-// import DummyItem from './dummy-item'
+import ProductElement from './product-element'
 
 const Wrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   flex: 1;
-  color: grey;
+  color: gray;
 `
 const Title = styled('h2')`
   font-size: 3;
@@ -14,15 +14,16 @@ const Title = styled('h2')`
   letter-spacing: 1px;
   margin-bottom: 3;
 `
-const ProductElement = () => {
-  return <div>TYP: desc</div>
-}
+
 const ProductDetails = ({ product }) => {
-  const { key } = product
+  const { key, elements } = product
+
   return (
     <Wrapper>
       <Title>{key}</Title>
-      <ProductElement />
+      {elements.map(element => (
+        <ProductElement key={element.name} element={element} />
+      ))}
     </Wrapper>
   )
 }
