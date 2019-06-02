@@ -8,7 +8,6 @@ export const breakpoints = {
 
 export const brand = {
   primary: 'rgba(0, 14, 34, 0.9)',
-  primaryLight: 'hotpink',
   secondary: '#B1D8C6',
 }
 
@@ -57,26 +56,11 @@ export const animation = {
   transitionTime: '300ms',
 }
 
-export const space = [0, 4, 8, 16, 32, 64]
-
 export default {
   colors,
   animation,
   breakpoints,
   fonts,
-  space,
+  space: [0, 4, 8, 16, 32, 64],
   fontSizes: [12, 14, 16, 20, 24, 32],
-  container: {
-    base: '100rem',
-    text: '55rem',
-  },
-  spacer: {
-    horizontal: '2rem',
-    vertical: '3rem',
-  },
-  gradient: `linear-gradient(
-    to right,
-    rgba(208, 255, 227, 1) 0%,
-    rgba(177, 216, 198, 1) 100%
-  )`,
 }
