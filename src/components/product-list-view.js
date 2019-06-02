@@ -30,6 +30,7 @@ const Th = styled('td')`
   text-transform: uppercase;
 `
 const PAGE_TITLE = 'Products'
+const COLS = ['Id', 'Name', 'Price', 'Published']
 
 const ProductListView = () => {
   const [{ data, isLoading, isError }] = useFetchProducts()
@@ -48,14 +49,13 @@ const ProductListView = () => {
       >
         <thead>
           <tr>
-            <Th>Id</Th>
-            <Th>Name</Th>
-            <Th>Price</Th>
-            <Th>Published</Th>
+            {COLS.map(col => (
+              <Th>{col}</Th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {isLoading || !data
+          {isLoading
             ? [0, 1, 2].map(i => <ProductListItemLoading key={i} />)
             : products.map(product => (
                 <ProductListItem key={product.id} product={product} />

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled, { Box, css } from '@xstyled/styled-components'
 import { breakpoints } from '@xstyled/system'
-import { ProductContext } from '../context'
+import { ProductContext, RESET_PRODUCT } from '../context'
 import ProductImage from './product-image'
 import ProductDetails from './product-details'
 import CloseButton from './close-button'
@@ -33,7 +33,7 @@ const ProductData = () => {
 
   return (
     <Wrapper>
-      <CloseButton onClick={() => dispatch({ type: 'RESET_PRODUCT' })} />
+      <CloseButton onClick={() => dispatch({ type: RESET_PRODUCT })} />
       <ProductWrapper>
         <ProductImage id={imageObj.value.id} />
         <ProductDetails product={selectedProduct} />

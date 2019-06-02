@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from '@xstyled/styled-components'
 import DummyItem from './dummy-item'
-import { ProductContext } from '../context'
+import { ProductContext, SELECT_PRODUCT } from '../context'
 
 const Tr = styled('tr')`
   transition: background-color 0.4s ease-out;
@@ -52,7 +52,7 @@ const ProductListItem = ({ product }) => {
 
   return (
     <Tr
-      onClick={() => dispatch({ type: 'SELECT_PRODUCT', payload: product })}
+      onClick={() => dispatch({ type: SELECT_PRODUCT, payload: product })}
       isSelected={isSelected}
     >
       <Td>{id}</Td>
