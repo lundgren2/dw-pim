@@ -1,37 +1,40 @@
 /* eslint-disable */
 import { useEffect, useContext } from 'react'
-import axios from 'axios'
-import { ProductContext } from '../context'
 import { API_URL } from '../config/app'
+import {
+  ProductContext,
+  FETCH_INIT,
+  FETCH_SUCCESS,
+  FETCH_FAILURE,
+} from '../context'
 
 const getProduct = async id => {
-  const response = await axios
-    .get(`${API_URL}/products/${id}`)
-    .then(res => res.data.data)
-  return response
+  const response = await fetch(`${API_URL}/products/${id}`)
+  const { data: product } = await response.json()
+  return product
 }
 
-const getProducts = async () =>
-  await axios
-    .get(`${API_URL}/products`)
-    .then(res => res.data.data.map(product => getProduct(product.id)))
+const getProducts = async () => {
+  const response = await fetch(`${API_URL}/products`)
+  const { data } = await response.json()
+  const products = data.map(product => getProduct(product.id))
+  return products
+}
 
 const useFetchProducts = () => {
   const [state, dispatch] = useContext(ProductContext)
 
   useEffect(() => {
     const fetchData = async () => {
-      dispatch({ type: 'FETCH_INIT' })
+      dispatch({ type: FETCH_INIT })
       try {
-        const productIds = await getProducts()
-        await axios.all(productIds).then(res => {
-          dispatch({
-            type: 'FETCH_SUCCESS',
-            payload: { ...state.data, products: res },
-          })
+        const products = await Promise.all(await getProducts())
+        dispatch({
+          type: FETCH_SUCCESS,
+          payload: { ...state.data, products: products },
         })
       } catch (error) {
-        dispatch({ type: 'FETCH_FAILURE' })
+        dispatch({ type: FETCH_FAILURE })
       }
     }
     fetchData()

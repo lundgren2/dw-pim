@@ -3,8 +3,8 @@ import { API_URL } from '../config/app'
 
 const getAsset = async id => {
   const response = await fetch(`${API_URL}/assets/${id}`)
-  const { data } = await response.json()
-  return data
+  const { data: asset } = await response.json()
+  return asset
 }
 
 const useProductImage = id => {

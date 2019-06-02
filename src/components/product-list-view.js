@@ -50,7 +50,7 @@ const ProductListView = () => {
         <thead>
           <tr>
             {COLS.map(col => (
-              <Th>{col}</Th>
+              <Th key={col}>{col}</Th>
             ))}
           </tr>
         </thead>
